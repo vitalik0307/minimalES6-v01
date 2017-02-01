@@ -1,22 +1,129 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Insert your title here</title>
-    <link rel="icon" type="image/ico" href="favicon.ico" />
-</head>
-<body>
-<h1>Hey! It's ES6</h1>
+<html> 
+    <head>
+    	 <title>Clothing store</title>
+    	 <style>
+				@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Raleway:300,400');
+		</style>
+    	 <link rel="stylesheet" type="text/css" href="build/css/app.css">
+    	 <!-- <link rel="stylesheet" type="text/css" href="reset.css">
+    	 <link rel="stylesheet" type="text/css" href="style.css"> -->
+    	 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    	 <meta name="viewport" content="width=device-width, initial-scale=1">
+    	 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    	 <!--<script src="src/js/script.js"></script>-->
+    </head>
+    <body>
+		
+			<header>
+			<div class="header">
+				<div class="logo" > <img src="images/aloha-logo.svg" alt="logo"></div>
+				<div class="cart"> <img src="images/cart-icon.svg" alt="cart">
+				<div class="cart-total">0</div>
+				</div>
+				
+				<div class="nav">
+					<ul>
+						<li class="nav-item"><a href="">ABOUT</a></li>
+						<li class="nav-item"><a href="">SHOP</a></li>
+						<li class="nav-item"><a href="">FEATURED</a></li>
+						<li class="nav-item"><a href="">UPDATES</a></li>
+					</ul>
+				</div>	
+			 </header>
 
-<!-- test code -->
-<script>
-    let test = 'hello es6 world';
-    let square = x => x * x;
+			<main>
+				<section>
+					<div id="banner">
+						<div id="banner-text" class="white text-center">
+						<p>WANT TO BUY<p>
+						<h1 >COOL SHIT FROM BEST BUY? </h1> 
+						</div>
+					</div>		
+				</section>
 
-    console.log('square is ' + square);
-    console.log(test);
-</script>
-<!-- end code insert -->
-<script src="build/bundle.js"></script>
-</body>
+				<section class="cta text-center"> 
+					<h2><span class ="thin-font">Have you ever wanted to  </span> <span class="bold">buy something?</span></h2>
+					<p>Aloha Apparel Co. sells only the finest ready-to-travel clothing. Browse our</p><p> current selection of products or sign-up for updates below.</p>
+				</section>
+				<section>
+					<div class="galary">
+						<div class="laptop big-img"><a href="">LAPTOPS / ULTRABOOKS</a></div>
+						<div class="tv small-img"><a href="">4K TV'S</a></div>
+						<div class="audio small-img"><a href="">HOME AUDIO</a></div>
+						<div class="tablet small-img"><a href="">TABLETS</a></div>
+						<div class="desktop small-img"><a href="">DESKTOPS</a></div>
+						<div class="cell big-img"><a href="">CELLPHONES</a></div>
+					</div>	
+				</section>
+
+				<div class="popup-cart clearfix">
+					<h3>Items in Your Cart</h3>
+					<div class="cart-item">
+						<img src="images/10487548.jpg" alt="Apple Watch">
+						<p>Apple Watch Series 2 42mm Space Grey Aluminum Case with Black Sport Band</p>
+						<input class="cart-item-quantity" type="number" min="1" value="1" name="quantity" >
+						<p>$529<button class="btn-remove add btn-hover">Remove</button></p>
+					</div>
+					<div class ="pay">
+						<p>Shipping:Free</p>
+						<p>Total $529</p>
+						<button id="checkout" class="add btn-hover">Checkout</button>
+						<button class="close-popup add">Close</button>
+					</div>
+				</div>
+
+				<section class="products text-center clearfix">
+						<div class="owl-carousel owl-theme">
+
+							
+
+							
+						</div><!-- end of OWL CAROUSEL -->	
+
+				</section>
+
+				<div class="popup">
+				<img src="images/10487548.jpg" alt="apple Watch">
+				<p>$529</p>
+				<h5>Apple Watch Series 2 42mm Space Grey Aluminum Case with Black Sport Band</h5>
+				<button class="add-to-cart add">Add to cart</button>
+				<button class="close-popup add">Close</button>
+				</div>
+
+				<section class="subscribe"> 
+					<div class="subscribe-text white text-center text-shadow">
+						<h2>WANT TO GET CONSTANT UPDATES ?</h2>
+						<p><span class="bold">GIVE US YOUR EMAIL AND WE WOUNT STOP EMAILING YOU</span></p>
+					</div><!--end of div subscribe-text-->
+
+					<div class="form clearfix">
+						<input class="floatleft"  type="email" placeholder="Your email">
+							<div class="button">
+							<input class=" floatright white btn-hover" type="submit" value="Subscribe">
+							</div>
+					</div>
+
+				</section>
+			</main>
+
+			<footer> 
+				<div class="social white clearfix">
+					<ul>
+						<li> <a href="https://www.facebook.com/"> <i class="fa fa-facebook"></i>  <span class="hide-for-mobile">Facebook </span> </a> </li>
+						<li> <a href="https://twitter.com"> <i class="fa fa-twitter"></i>  <span class="hide-for-mobile">Twitter </span> </a> </li>
+						<li> <a href="https://www.instagram.com"> <i class="fa fa-instagram"></i>  <span class="hide-for-mobile">Instagram </span> </a> </li>
+						<li> <a href="https://www.pinterest.com/"> <i class="fa fa-pinterest"></i>  <span class="hide-for-mobile">Pinterest </span> </a> </li>
+						<li> <a href="https://plus.google.com/"> <i class="fa fa-google-plus"></i>  <span class="hide-for-mobile">Google&plus; </span> </a> </li>
+					</ul>
+				</div>
+				<div id="overlay"></div>
+				<script src="build/bundle.js"></script>
+				<script src="src/js/owl.carousel.min.js"></script>
+				<!-- <script>
+				</script> -->
+				
+			 </footer>
+			
+    </body>
 </html>
