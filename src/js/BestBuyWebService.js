@@ -41,7 +41,8 @@ export default class BestBuyWebService{
     }
 
     resultsPreprocessor(theApp){
-        /*the addEventListener function near line 29 requires a proper function (an event handler) to be returned so we can create one to be returned.
+        /*the addEventListener function near line 29 requires a proper function (an event handler)
+         to be returned so we can create one to be returned.
         */
         let thisService = this; // a reference to the instance created from this class
         let eventHandler = function(evt){

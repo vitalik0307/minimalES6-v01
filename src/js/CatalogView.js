@@ -72,6 +72,11 @@ export default class CatalogView{
             newImg.setAttribute("src", product.image);
             newImg.setAttribute("alt", `${product.name}`); // this works too
             newImg.setAttribute("data-sku",product.sku);
+            // create manufacture name
+            let newManufPara = document.createElement("p");
+            newManufPara.setAttribute("class","product-manufacture");
+            let newManufTextNode = document.createTextNode(product.manufacturer);
+            newManufPara.appendChild(newManufTextNode);
             // create a new Paragraph to show a description
             let newPara = document.createElement("p");
             newPara.setAttribute("class","product-type");
@@ -84,7 +89,7 @@ export default class CatalogView{
             //<h3>Dell Inspirion 12" blah blah</h3>
             let newPricePara = document.createElement("p");
             newPricePara.setAttribute("class","price");
-            let newPriceParaTextNode = document.createTextNode(product.regularPrice); // 299.99
+            let newPriceParaTextNode = document.createTextNode("$" + product.regularPrice); // 299.99
             newPricePara.appendChild(newPriceParaTextNode);
             //<p class='price>299.99</p>
             /* you will need similar code to create
@@ -109,6 +114,7 @@ export default class CatalogView{
             addToCartButton.appendChild(addCartTextNode);
             addToCartButton.addEventListener("click",this.onClickCartButton(this.theApp),false);
             newDiv.appendChild(newImg);
+            newDiv.appendChild(newManufPara);
             newDiv.appendChild(newPara);
             newDiv.appendChild(newH3Tag);
             newDiv.appendChild(newPricePara);
