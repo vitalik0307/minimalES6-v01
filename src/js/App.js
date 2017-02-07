@@ -1,11 +1,9 @@
-/**
- * Created by Edward_J_Apostol on 2017-01-28.
- */
+
 
 import BestBuyWebService from './BestBuyWebService';
 import CatalogView from './CatalogView';
 import ShoppingCart from './ShoppingCart';
-// import ShoppingCartView from './ShoppingCartView';
+import ShoppingCartView from './ShoppingCartView';
 
 export default class App {
 
@@ -17,6 +15,12 @@ export default class App {
         // call the initBestBuyWebService to initialize the
         // BestBuy Web Service and return the data
         this.initBestBuyWebService();
+        this.shoppingCartView = new ShoppingCartView();
+        $('.cart').click(this,function(e){
+            console.log("hello");
+            e.data.shoppingCartView.showCartPop(e.data.products);
+
+        });
     }
 
     initBestBuyWebService(){

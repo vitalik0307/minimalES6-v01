@@ -1,6 +1,4 @@
-/**
- * Created by Edward_J_Apostol on 2017-01-28.
- */
+
 // this class is responsible for displaying the product data...
 // Perhaps in a carousel.
 export default class CatalogView{
@@ -41,6 +39,8 @@ export default class CatalogView{
             theApp.shoppingCart.addItemToCart(theSku);
         }
     }
+    
+
     addProductsToCarousel(products,theApp){
         this.theApp = theApp;
         if (products === undefined || products == null){
@@ -48,13 +48,7 @@ export default class CatalogView{
         }
         /* the loop creates all the elements for each item in the carousel.
          * it recreates the following structure
-         * <div class="product-wrapper">
-         * <img src="images/stretch-knit-dress.jpg" alt="Image of stretch knit dress" />
-         * <p class="product-type">Dresses</p>
-         * <h3>Stretch Knit Dress</h3>
-         * <p class="price">$169.00</p>
-         * </div>
-          * */
+        * */
         for (let p=0; p<products.length; p++){
             let product = products[p];
             console.log(product);
@@ -63,7 +57,6 @@ export default class CatalogView{
             // create the DIV tag with class 'product-wrapper'
             let newDiv = document.createElement("div");
             newDiv.setAttribute("class","product-wrapper");
-            // <div class='product-wrapper'></div>
             // create a new IMG tag. Suggest to add data-sku attribute here too
             // so that if you 'click' on the image, it would pop up a quick-view
             // window and you can use the sku.
@@ -91,7 +84,6 @@ export default class CatalogView{
             newPricePara.setAttribute("class","price");
             let newPriceParaTextNode = document.createTextNode("$" + product.regularPrice); // 299.99
             newPricePara.appendChild(newPriceParaTextNode);
-            //<p class='price>299.99</p>
             /* you will need similar code to create
             an add to cart and a quick view button
             remember that each button you create should have
@@ -120,16 +112,7 @@ export default class CatalogView{
             newDiv.appendChild(newPricePara);
             newDiv.appendChild(quickViewButton); // added new quickView Button
             newDiv.appendChild(addToCartButton); // added new add To Cart Button
-            /*
-            * <div>
-            *     <img src="somepicfrombestbuy"></img>
-            *     <p>buy me now</p>
-            *     <h3>Dell Inspirion 12"</h3>
-            *     <p>299.99</p>
-            *     <button id="qv_${product.sku}" data-sku="" type="button">Quick View</button>
-            *     <button id="cart_${product.sku}" data-sku="" type="button">Add To Cart</button>
-            * </div>
-            * */
+         
             this.carousel[0].appendChild(newDiv);
         }
         this.initCarousel();

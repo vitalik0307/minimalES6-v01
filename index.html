@@ -11,7 +11,7 @@
     	 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     	 <meta name="viewport" content="width=device-width, initial-scale=1">
     	 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    	 <!--<script src="src/js/script.js"></script>-->
+    	 <script src="src/js/script.js"></script>
     </head>
     <body>
 		
@@ -57,39 +57,36 @@
 					</div>	
 				</section>
 
-				<div class="popup-cart clearfix">
-					<h3>Items in Your Cart</h3>
-					<div class="cart-item">
-						<img src="images/10487548.jpg" alt="Apple Watch">
-						<p>Apple Watch Series 2 42mm Space Grey Aluminum Case with Black Sport Band</p>
-						<input class="cart-item-quantity" type="number" min="1" value="1" name="quantity" >
-						<p>$529<button class="btn-remove add btn-hover">Remove</button></p>
+
+				<div class="popup-cart">
+					<h3>YOUR CART</h3>
+					<div class="cart-wrapper">
+						<div class="cart-img small-child"><img src="${img}"></div>
+						<div class="cart-description big-child">${name}</div>
+						<div class="cart-price small-child">${price}</div>
+						<div class="cart-qvantity big-child">quantity  <i class="fa fa-minus-square" aria-hidden="true"></i><input class="cart-item-quantity" type="text" value="0"><i class="fa fa-plus-square" aria-hidden="true"></i></div>
+						<div class="cart-buttons small-child">
+							<button class="update">UPDATE</button>
+							<button class="remove">REMOVE</button>
+						</div>
 					</div>
-					<div class ="pay">
-						<p>Shipping:Free</p>
-						<p>Total $529</p>
-						<button id="checkout" class="add btn-hover">Checkout</button>
-						<button class="close-popup add">Close</button>
-					</div>
+					<button class="checkout">CHECKOUT</button>	
 				</div>
+
 
 				<section class="products text-center clearfix">
 						<div class="owl-carousel owl-theme">
-
-							
-
-							
 						</div><!-- end of OWL CAROUSEL -->	
 
 				</section>
 
-				<div class="popup">
+				<!--<div class="popup">
 				<img src="images/10487548.jpg" alt="apple Watch">
 				<p>$529</p>
 				<h5>Apple Watch Series 2 42mm Space Grey Aluminum Case with Black Sport Band</h5>
 				<button class="add-to-cart add">Add to cart</button>
 				<button class="close-popup add">Close</button>
-				</div>
+				</div>-->
 
 				<section class="subscribe"> 
 					<div class="subscribe-text white text-center text-shadow">
@@ -120,8 +117,6 @@
 				<div id="overlay"></div>
 				<script src="build/bundle.js"></script>
 				<script src="src/js/owl.carousel.min.js"></script>
-				<!-- <script>
-				</script> -->
 				
 			 </footer>
 			

@@ -1,12 +1,3 @@
-/*export default class BestBuyWebService{
-	constructor(){
-		console.log("add Best Buy Web Service class");
-
-	}
-}*/
-
- //Created by Edward_J_Apostol on 2017-01-27.
- 
 
 export default class BestBuyWebService{
 
@@ -35,7 +26,10 @@ export default class BestBuyWebService{
         // *** see http://bit.ly/js-passmoreargsevent
          */
 
-        serviceChannel.addEventListener("readystatechange",this.resultsPreprocessor(theApp),false);
+        serviceChannel.addEventListener("readystatechange",this.resultsPreprocessor(theApp),false)
+        //add event listener takes 3 parameters 1st is the name of event , 2nd is the function that
+        // is executed after the event happens, the third parameter (usually always false) means
+        // that once the event is "handled" or "processed", stop.
         serviceChannel.open("GET",url,true);
         serviceChannel.send();
     }
@@ -45,19 +39,19 @@ export default class BestBuyWebService{
          to be returned so we can create one to be returned.
         */
         let thisService = this; // a reference to the instance created from this class
-        let eventHandler = function(evt){
-            thisService.results(evt,theApp)
+        let eventHandler = function(e){
+            thisService.results(e,theApp)
         };
         return eventHandler
     };
 
-    results(evt,theApp){
+    results(e,theApp){
 
-        if (evt.target.readyState == 4 && evt.target.status == 200){
+        if (e.target.readyState == 4 && e.target.status == 200){
             // assign this instance's productData to be the responseText
-            this.productData = evt.target.responseText;
+            this.productData = e.target.responseText;
             // assign the app's productData to be the responseText too
-            theApp.productData = evt.target.responseText;
+            theApp.productData = e.target.responseText;
             // tell the app to prepare the catalog
             // there is another way to do it, with custom
             // events. but this will work for now.
