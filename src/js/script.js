@@ -20,22 +20,6 @@ $(document).ready(function() {
 });
 
 
-    /*
-
-    $('.add-to-cart-btn').click(function () {
-        var total = parseInt($('.cart-total').text()) + 1;
-        $('.cart-total').show().text(total);
-    });
-});
-
-    $(".cart").click(this,function) {
-        console.log(e.data);
-    }
-    function(e) {
-        let theApp = e.data;
-        theApp.shoppingCart.showPopUp(theApp.products);
-    }*/
-
 
 
 

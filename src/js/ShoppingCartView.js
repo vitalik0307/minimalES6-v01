@@ -13,14 +13,15 @@ export default class ShoppingCartView{
 				
 				console.log(products.length);
 				for (let p = 0; p < products.length; p++){
-					let currrentProduct = products[i];
-					let productSku = currrentProduct.sku;//or currentProduct["sku"];
+					let currentProduct = products[i];
+					let productSku = currentProduct.sku;//or currentProduct["sku"];
+					console.log(productSku);
 					productSku = productSku.toString();
 					//console.log(productSku);
-					if (productSku == currentSku) {
-						let img = currrentProduct.image;//chet at JSON for .image
-						let name = currrentProduct.name;
-						let price = currrentProduct.price;
+					if (productSku === currentSku) {
+						let img = currentProduct.image;//chet at JSON for .image
+						let name = currentProduct.name;
+						let price = currentProduct.price;
 
 
 						output += `
@@ -33,7 +34,9 @@ export default class ShoppingCartView{
 										<div class="cart-price small-child">
 									 	${price}
 									 	</div>
+									 	<div class="cart-qvantity big-child"
 									 	 ${currentQty}</p>
+									 	 </div>
 									`
 					}
 					// close if statement
