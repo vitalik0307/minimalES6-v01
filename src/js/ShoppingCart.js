@@ -47,8 +47,24 @@ export default class ShoppingCart{
         
 
     }
-
     removeItemFromCart(sku){
+        /*
+        let remove = document.getElementByClassName('remove');
+        let removeID = remove.getAttribute("id");
+        remove.addEventListener("click",function(e){
+
+             if(removeID === sku){
+                
+    
+             }
+
+    
+        });
+
+
+
+
+        */
 
     }
 

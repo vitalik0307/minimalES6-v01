@@ -32,11 +32,12 @@ export default class CatalogView{
          */
         
     }
-    onClickCartButton(theApp){
+    onClickCartButton(theApp,products){
         return function(e){
             console.log(e.target.getAttribute("data-sku"));
             let theSku = e.target.getAttribute("data-sku");
             theApp.shoppingCart.addItemToCart(theSku);
+            theApp.shoppingCartView.showCartPop(products);
         }
     }
     
@@ -104,7 +105,7 @@ export default class CatalogView{
             addToCartButton.setAttribute("type","button");
             let addCartTextNode = document.createTextNode("Add To Cart");
             addToCartButton.appendChild(addCartTextNode);
-            addToCartButton.addEventListener("click",this.onClickCartButton(this.theApp),false);
+            addToCartButton.addEventListener("click",this.onClickCartButton(this.theApp,products),false);
             newDiv.appendChild(newImg);
             newDiv.appendChild(newManufPara);
             newDiv.appendChild(newPara);
