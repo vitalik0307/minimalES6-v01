@@ -5,20 +5,22 @@ export default class CatalogView{
     constructor(){
         this.carousel = document.getElementsByClassName("owl-carousel");
         this.theApp = null;
+
+        // this.onClickRemoveButton()
     }
     initCarousel(){
         $(document).ready(function(){
-                        $('.owl-carousel').owlCarousel({
-                        rtl:true,
-                        loop:true,
-                        margin:10,
-                        responsive:{
-                            0:{items:1},
-                            601:{items:2},
-                            1050:{items:4}
-                        }
-                        })
-                        });  
+            $('.owl-carousel').owlCarousel({
+            rtl:true,
+            loop:true,
+            margin:10,
+            responsive:{
+                0:{items:1},
+                601:{items:2},
+                1050:{items:4}
+            }
+            })
+            });  
         /*
         You should initialize the flickicity carousel here.
         Right now this code just adds the div tags you would need to add
@@ -40,6 +42,47 @@ export default class CatalogView{
             theApp.shoppingCartView.showCartPop(products);
         }
     }
+
+    // onClickRemoveButton() {
+    //     $('.popup-cart').on('click', '.remove', function(e){
+    //         e.preventDefault();
+    //         /*  When user clicks on Remove button with class="remove" start running function which gets 
+    //             argument(e) - click event */
+    //          // remove button
+    //          var $obj = $(e.currentTarget);
+    //          console.log($obj);
+    //          /* Create var $obj which equal to remove button */
+
+    //          // get target id
+    //          var id = $obj.attr('data-target-id');
+    //          /*Create var id which is equal to remove button id which is equal to sku number */
+
+    //          var itemFromSessionStorage = window.sessionStorage.getItem(id);
+    //          /* Create var itemFromSessionStorage which is equal to item IDs stored in session starage */
+
+    //          // if we cannot find object in SS stop function
+    //          if (itemFromSessionStorage == null) {
+    //             return;
+    //             /* If session storage is empty - stop running the function   */
+    //          }
+
+    //          // remove one item
+    //          itemFromSessionStorage--;
+    //          /* subtrct 1 from quantity of the same items in session storage */
+
+    //          if (itemFromSessionStorage == 0) {
+    //             window.sessionStorage.removeItem(id)
+    //             /*   If quantity of items in SS == 0 , delete item with by ID from cart   */
+    //          } else {
+    //             window.sessionStorage.setItem(id, itemFromSessionStorage)
+    //             /*   Else update the quantity in shopping cart (after 1 item was subtracted)  */
+    //          }
+
+    //         $('.cart').trigger('click');
+    //         /*   Each time user click on (remove button) trigger immitates click on (.popup-cart button) what updates the cart   */
+    //     });
+
+    // }
     
 
     addProductsToCarousel(products,theApp){
@@ -52,7 +95,7 @@ export default class CatalogView{
         * */
         for (let p=0; p<products.length; p++){
             let product = products[p];
-            console.log(product);
+            // console.log(product);
             // each product is a product object
             // use it to create the element
             // create the DIV tag with class 'product-wrapper'

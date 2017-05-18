@@ -25,7 +25,7 @@ export default class ShoppingCart{
         // if product is already in session add +1 to the value
         // else create key and value of  = 1
        
-        let numMatches = 0;
+         let numMatches = 0;
 
         for (var i = 0; i < this.ss.length; i++) {
 
@@ -47,33 +47,23 @@ export default class ShoppingCart{
         
 
     }
-    removeItemFromCart(sku){
-        /*
-        let remove = document.getElementByClassName('remove');
-        let removeID = remove.getAttribute("id");
-        remove.addEventListener("click",function(e){
 
-             if(removeID === sku){
-                
+    removeItemFromCart(e){
+        let currentTarget = e.target; // which "should be" the button
+        let currentSku = e.target.getAttribute("data-sku");
+        console.log("this is remove button sku number " + currentSku);
+        
+
+     
     
-             }
-
-    
-        });
-
-
-
-
-        */
-
     }
 
-    updateQuantityofItemInCart(sky,qty){
+    updateQuantityofItemInCart(sku,qty){
 
     }
 
     clearCart(){
-        // clear the entire cart
+        storage.clear();
     }
 
 

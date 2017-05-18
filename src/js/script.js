@@ -4,6 +4,7 @@ $(document).ready(function() {
 	 $('.cart').click(function() {
         $('.popup-cart, #overlay').fadeIn(300);
         });
+     
      $('.checkout').click(function() {
         $('.popup-cart, #overlay').fadeOut(300);
      })

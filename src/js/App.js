@@ -15,9 +15,8 @@ export default class App {
         // call the initBestBuyWebService to initialize the
         // BestBuy Web Service and return the data
         this.initBestBuyWebService();
-        this.shoppingCartView = new ShoppingCartView();
+        this.shoppingCartView = new ShoppingCartView(this.shoppingCart);
         $('.cart').click(this,function(e){
-            console.log("hello");
             e.data.shoppingCartView.showCartPop(e.data.products);
 
         });
@@ -44,7 +43,7 @@ export default class App {
             // only get the products property (for now)
             // this code was copied from SimpleHTTPRequest.html
             this.products = this.bbws.getProducts();
-            console.log(this.products);
+            // console.log(this.products);
         }
 
         this.showCatalog();

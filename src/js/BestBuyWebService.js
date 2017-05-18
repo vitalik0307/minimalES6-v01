@@ -17,7 +17,7 @@ export default class BestBuyWebService{
         let serviceChannel = new XMLHttpRequest();
         let url = this.url;
 
-        /*≠
+        /*
         // *** To solve the issue of passing the data back to the main app...
         // *** and eventually, to catalogView
         // *** You could the addEventListener to call
