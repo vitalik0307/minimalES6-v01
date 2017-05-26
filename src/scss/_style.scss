@@ -207,11 +207,13 @@ a:hover{
 	margin:5px;
 }
 .checkout{
+	position:absolute;
+	right:2px;
+	bottom:2px;
 	border:none;
 	background:green;
 	color:white;
 	padding:15px;
-	float:right;
 	margin:10px;
 	
 }
