@@ -50,19 +50,22 @@ export default class ShoppingCartView{
 					let productPrice = document.createElement("p");
 					productPrice.innerHTML = price;
 
-					let quantityDiv = document.createElement("div");
-					quantityDiv.setAttribute("class","cart-qvantity small-child");
+					let buttonsDiv = document.createElement("div");
+					buttonsDiv.setAttribute("class","cart-buttons small-child");
 
-					let quantity = document.createElement("p");
-					quantity.value = `${currentQty}`;
+					// let quantityDiv = document.createElement("div");
+					// quantityDiv.setAttribute("class","cart-qvantity small-child");
 
-					let updateButton = document.createElement("button");
-					updateButton.setAttribute("class","update");
-					updateButton.setAttribute("id","${productSku}");
-					updateButton.setAttribute("data-sku",productSku);
-					updateButton.setAttribute("type","button");
-					let updateButtonTextNode = document.createTextNode("Update");
-            		updateButton.appendChild(updateButtonTextNode);
+					// let quantity = document.createElement("p");
+					// quantity.value = `${currentQty}`;
+
+					let buyButton = document.createElement("button");
+					buyButton.setAttribute("class","buy");
+					buyButton.setAttribute("id","${productSku}");
+					buyButton.setAttribute("data-sku",productSku);
+					buyButton.setAttribute("type","button");
+					let buyButtonTextNode = document.createTextNode("Buy");
+            		buyButton.appendChild(buyButtonTextNode);
 
 					let removeButton = document.createElement("button");
 					removeButton.setAttribute("class","remove");
@@ -85,13 +88,13 @@ export default class ShoppingCartView{
 
             		priceDiv.appendChild(productPrice);
 
-            		wrapperDiv.appendChild(quantityDiv);
+            		// wrapperDiv.appendChild(quantityDiv);
 
-            		quantityDiv.appendChild(quantity);
+            		// quantityDiv.appendChild(quantity);
 
-            		wrapperDiv.appendChild(updateButton);
-
-            		wrapperDiv.appendChild(removeButton);
+            		wrapperDiv.appendChild(buttonsDiv);
+            		buttonsDiv.appendChild(buyButton);
+            		buttonsDiv.appendChild(removeButton);
 
             		document.getElementById("shopping-cart-w").appendChild(wrapperDiv);
 

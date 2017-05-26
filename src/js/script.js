@@ -1,6 +1,7 @@
 $(document).ready(function() {
-    $('#overlay').css({opacity: 0.5});
 
+    $('#overlay').css({opacity: 0.5});
+    
 	 $('.cart').click(function() {
         $('.popup-cart, #overlay').fadeIn(300);
         });
